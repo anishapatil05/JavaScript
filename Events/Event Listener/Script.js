@@ -23,4 +23,21 @@ para.addEventListener("click", (evt) => {
     console.log(evt.type);
     console.log(evt.target);
 })
+let div = document.querySelector("#box");
+let currText = "text";
+div.addEventListener("mouseover", () => {
+    if (currText === "text") {
+        div.style.width = "100px";
+        div.style.height = "100px";
+        div.innerHTML = '<img src = "cartoon.jpg"  style="width:100%; height:100%;"/>';
+        currText = "img";
+    } else {
+        currText = "text";
+        div.innerHTML = "Surprise.....Check again";
+    }
+    console.log(currText)
+
+
+})
+
 
