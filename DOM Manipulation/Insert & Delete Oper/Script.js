@@ -27,3 +27,12 @@ let body = document.querySelector("body");
 newbtn.remove();
 let para = document.querySelector("p");
 para.remove();
+
+// appendChild()
+let body2 = document.querySelector("body");
+let para2 = document.createElement("p");
+para2.innerText="heloo anisha";
+body2.appendChild(para2);
+
+// removeChild()
+body.removeChild(para2)
