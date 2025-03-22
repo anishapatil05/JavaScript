@@ -4,6 +4,8 @@ let choices = document.querySelectorAll(".choice");
 let msg = document.querySelector("#msg");
 let userScorePara = document.querySelector("#user-score");
 let compScorePara = document.querySelector("#comp-score");
+let resetBtn = document.querySelector("#resetbtn");
+let btn = document.querySelector("#btn");
 
 const showWinner = (userWin, userChoice, compChoice) => {
     if (userWin) {
@@ -43,12 +45,13 @@ const playGame = (userChoice) => {
         showWinner(userWin, userChoice, compChoice);
     }
 
+
 }
 
 const drawGame = () => {
 
     msg.innerText = "Game was draw, Please try again";
-    msg.style.backgroundColor = "black";
+    msg.style.backgroundColor = "#98A2E7";
 }
 
 const genCompChoice = () => {
@@ -64,3 +67,22 @@ choices.forEach((choice) => {
         playGame(userChoice);
     });
 });
+
+const resetGame = (userScore, compScore) => {
+
+    userScore = 0;
+    compScore = 0;
+    userScorePara.innerText = userScore;
+    compScorePara.innerText = compScore;
+
+
+    enableBtn();
+}
+const enableBtn = () => {
+    resetBtn.disabled = false;
+
+    resetBtn.innerText = "Game reset!"
+    resetBtn.style.backgroundColor = "#E8C58D";
+}
+
+resetBtn.addEventListener("click", () => resetGame(userScore, compScore));
