@@ -20,6 +20,7 @@ const showWinner = (userWin, userChoice, compChoice) => {
         msg.innerText = `You lose.  ${compChoice} beats your ${userChoice}`;
         msg.style.backgroundColor = "red";
     }
+    
 }
 const playGame = (userChoice) => {
     // User choice
@@ -74,6 +75,8 @@ const resetGame = (userScore, compScore) => {
     compScore = 0;
     userScorePara.innerText = userScore;
     compScorePara.innerText = compScore;
+
+    msg.innerText = "Play your move";
 
 
     enableBtn();
